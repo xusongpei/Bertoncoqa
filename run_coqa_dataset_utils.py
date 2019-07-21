@@ -249,7 +249,7 @@ def read_coqa_examples(input_file, history_len=2, add_QA_tag=False):
     with open(input_file, "r", encoding='utf-8') as reader:
         input_data = json.load(reader)["data"]
     examples = []
-    input_data = input_data#[:500]  # careful
+    input_data = input_data[:5000]  # careful
     for data_idx in tqdm(range(len(input_data)), desc='Generating examples'):
         datum = input_data[data_idx]
         context_str = datum['story']
